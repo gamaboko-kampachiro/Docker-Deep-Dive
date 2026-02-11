@@ -216,6 +216,7 @@ In a Virtual Machine-based setup, the physical server first runs a Host Operatin
 
 <b><u>Virtual Machine Architecture</u></b>
 
+```bash
 +---------------------------------------------------+
 |                   Physical Server                 |
 |         (CPU, RAM, Disk, Network Hardware)        |
@@ -239,6 +240,7 @@ In a Virtual Machine-based setup, the physical server first runs a Host Operatin
 +---------------+ +---------------+ +---------------+
 |  Application  | |  Application  | |  Application  |
 +---------------+ +---------------+ +---------------+
+```
 
 Each Virtual Machine contains:
     -> A full Guest Operating System
@@ -256,6 +258,7 @@ Because every VM includes a full OS, resource consumption is higher and startup 
 In a Docker-based setup, the physical server runs a Host Operating System (typically Linux). On top of this OS, the Docker Engine is installed.
 
 <b><u>Docker Architecture</u></b>
+```bash
 +---------------------------------------------------+
 |               Physical Server                     |
 |       (CPU, RAM, Disk, Network Hardware)          |
@@ -278,7 +281,7 @@ In a Docker-based setup, the physical server runs a Host Operating System (typic
 |   Container 1 | |  Container 2  | |  Container 3  |
 |   App + Libs  | |  App + Libs   | |  App + Libs   |
 +---------------+ +---------------+ +---------------+
-
+```
 Instead of creating full operating systems, Docker creates containers. Containers:
     -> Share the host OS kernel
     -> Include only the application and its required libraries
@@ -352,7 +355,7 @@ This difference is critical for autoscaling systems.
 ---
 
 ### 2.7 Image Size Comparison
-
+```bash
 +----------------------------------------------------------------------------------+
 |   <b>Aspect</b>       |   <b>Virtual Machine</b>  |	<b>Docker Container</b>    |
 +----------------------------------------------------------------------------------+
@@ -362,7 +365,7 @@ This difference is critical for autoscaling systems.
 +----------------------------------------------------------------------------------+
 |   Kernel	            |           Separate        |	        Shared             |
 +----------------------------------------------------------------------------------+
-
+```
 ---
 
 ### 2.8 Portability
